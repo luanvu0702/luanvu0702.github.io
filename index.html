@@ -1,11 +1,349 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="hydrated">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CaTo Diary</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="apple-mobile-web-app-title" content="CaTo">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon" href="./Tomato Cactus - Mini Size.png">
+    <link rel="apple-touch-startup-image" href="./Tomato Cactus - Mini Size.png">
+
+    <!-- Favicon -->
+    <link href="./favicon.png" rel="icon" type="image/png">
+
+    <!-- title and description-->
+    <title>CaTo - Home</title>
+    <meta name="description" content="CaTo Diary">
+
+    <!-- css files -->
+    <link rel="stylesheet" href="./css/tailwind.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.9.3/dropzone.css" />
 </head>
+
 <body>
-    
+    <div id="wrapper">
+        <div id="sidebar" class="fixed top-0 left-0 z-40 max-md:top-auto max-md:bottom-0">
+            <div id="sidebar__inner"
+                class="flex sside md:flex-col justify-between md:h-screen md:p-2 p-1 transition-all duration-500 bg-white shadow dark:bg-dark2 2xl:w-72 xl:w-60 max-xl:w-[73px] max-md:w-screen max-md:border-t max-md:dark:border-slate-700">
+                <div
+                    class="flex h-20 px-2 max-md:fixed max-md:top-0 max-md:w-full max-md:bg-white/80 max-md:left-0 max-md:px-4 max-md:h-14 max-md:shadow-sm max-md:dark:bg-slate-900/80 backdrop-blur-xl">
+                    <a href="#" id="logo" class="flex items-center gap-3" data-bind="click: ReloadPage">
+                        🌵🍅
+                    </a>
+                </div>
+                <nav class="flex-1 max-md:flex max-md:justify-around md:space-y-2">
+                    <a href="logout.php" class="max-md:!fixed max-md:top-2 max-md:right-2 hover:bg-secondery">
+                        <ion-icon name="log-out" class="text-lg md hydrated" role="img" aria-label="log out outline">
+                        </ion-icon>
+                    </a>
+                </nav>
+            </div>
+        </div>
+
+        <main class="2xl:ml-[--w-side] xl:ml-[--w-side-md] md:ml-[--w-side-small]">
+            <div class="main__inner">
+                <div class="flex max-lg:flex-col xl:gap-10 md:gap-3 md:mt-10" id="js-oversized">
+                    <div class="md:max-w-[510px] flex-1 xl:space-y-6 space-y-3">
+                        <div
+                            class="bg-white rounded-xl shadow-sm p-4 space-y-4 text-sm font-medium border1 dark:bg-dark2">
+                            <div class="flex items-center gap-3">
+                                <div class="flex-1 bg-slate-100 hover:bg-opacity-80 transition-all rounded-lg cursor-pointer dark:bg-dark3"
+                                    uk-toggle="target: #create-post" tabindex="0" aria-expanded="false">
+                                    <div class="py-2.5 text-center dark:text-white"> Write something... </div>
+                                </div>
+
+                                <div class="p-2 bg-pink-100 hover:bg-opacity-80 transition-all rounded-lg cursor-pointer"
+                                    uk-toggle="target: #create-post" tabindex="0" aria-expanded="false">
+                                    <svg width="24px" height="24px" viewBox="0 0 24 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round">
+                                        </g>
+                                        <g id="SVGRepo_iconCarrier">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M8.96173 19.3707C6.01943 16.9714 2 13.0079 2 9.26044C2 3.3495 7.50016 0.662637 12 5.49877C16.4998 0.662637 22 3.34931 22 9.2604C22 13.008 17.9806 16.9714 15.0383 19.3707C13.7063 20.4569 13.0403 21 12 21C10.9597 21 10.2937 20.4569 8.96173 19.3707ZM10.0932 10.7463C10.1827 10.6184 10.2571 10.5122 10.3233 10.4213C10.3793 10.5188 10.4418 10.6324 10.517 10.7692L12.2273 13.8787C12.3933 14.1808 12.5562 14.4771 12.7197 14.6921C12.8947 14.9221 13.2023 15.2374 13.6954 15.2466C14.1884 15.2559 14.5077 14.9524 14.6912 14.7291C14.8627 14.5204 15.0365 14.2305 15.2138 13.9349L15.2692 13.8425C15.49 13.4745 15.629 13.2444 15.752 13.0782C15.8654 12.9251 15.9309 12.8751 15.9798 12.8475C16.0286 12.8198 16.1052 12.7894 16.2948 12.7709C16.5006 12.7509 16.7694 12.7501 17.1986 12.7501H18C18.4142 12.7501 18.75 12.4143 18.75 12.0001C18.75 11.5859 18.4142 11.2501 18 11.2501L17.1662 11.2501C16.7791 11.2501 16.4367 11.2501 16.1497 11.278C15.8385 11.3082 15.5357 11.3751 15.2407 11.5422C14.9457 11.7092 14.7325 11.9344 14.5465 12.1857C14.3749 12.4174 14.1988 12.711 13.9996 13.043L13.9521 13.1222C13.8654 13.2668 13.793 13.3872 13.7284 13.4906C13.6676 13.3849 13.5999 13.2618 13.5186 13.1141L11.8092 10.006C11.6551 9.7256 11.5015 9.44626 11.3458 9.24147C11.1756 9.01775 10.8839 8.72194 10.4164 8.6967C9.94887 8.67146 9.62698 8.93414 9.43373 9.13823C9.25683 9.32506 9.0741 9.58625 8.89069 9.84841L8.58131 10.2904C8.35416 10.6149 8.21175 10.8171 8.08848 10.9629C7.975 11.0971 7.91193 11.1411 7.86538 11.1653C7.81882 11.1896 7.74663 11.216 7.57159 11.232C7.38144 11.2494 7.13413 11.2501 6.73803 11.2501H6C5.58579 11.2501 5.25 11.5859 5.25 12.0001C5.25 12.4143 5.58579 12.7501 6 12.7501L6.76812 12.7501C7.12509 12.7501 7.44153 12.7501 7.70801 12.7258C7.99707 12.6994 8.27904 12.6411 8.55809 12.4958C8.83714 12.3505 9.04661 12.153 9.234 11.9313C9.40676 11.7269 9.58821 11.4677 9.79291 11.1752L10.0932 10.7463Z"
+                                                fill="#db2777"></path>
+                                        </g>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- ko foreach: { data: $root.posts, as: 'post' } -->
+                        <div class="bg-white rounded-xl shadow-sm text-sm font-medium border1 dark:bg-dark2">
+                            <div class="flex gap-3 sm:p-4 p-2.5 text-sm font-medium">
+                                <a href="#">
+                                    <img class="w-9 h-9 rounded-full"
+                                        data-bind="attr: { src: '/uploads/' + post.user.avatar, alt: post.user.name }">
+                                </a>
+                                <div class="flex-1">
+                                    <a href="#">
+                                        <h4 class="text-black dark:text-white">
+                                            <a href="#"
+                                                data-bind="text: post.user.username, attr: { title: post.user.name }"></a>
+                                        </h4>
+                                    </a>
+                                    <div class="text-xs text-gray-500 dark:text-white/80"
+                                        data-bind="text: post.createdTime">
+                                    </div>
+                                </div>
+                                <div class="-mr-1">
+                                    <button type="button" class="button__ico w-8 h-8" aria-haspopup="true"
+                                        aria-expanded="false">
+                                        <ion-icon class="text-xl md hydrated" name="ellipsis-horizontal" role="img"
+                                            aria-label="...">
+                                        </ion-icon>
+
+                                    </button>
+                                    <div class="w-[245px] uk-dropdown"
+                                        uk-dropdown="pos: bottom-right; animation: uk-animation-scale-up uk-transform-origin-top-right; animate-out: true; mode: click"
+                                        data-bind="attr: { id: 'dropdown-menu-' + post.id }">
+                                        <nav>
+                                            <a href="#" data-bind="click: $root.EditPost">
+                                                <ion-icon class="text-xl shrink-0 md hydrated" name="pencil" role="img"
+                                                    aria-label="Edit Post"></ion-icon>
+                                                Edit Post
+                                            </a>
+                                            <hr>
+                                            <a href="#" class="text-red-400 hover:!bg-red-50 dark:hover:!bg-red-500/50"
+                                                data-bind="click: $root.RemovePost">
+                                                <ion-icon class="text-xl shrink-0 md hydrated" name="trash" role="img"
+                                                    aria-label="Delete Post"></ion-icon>
+                                                Delete Post
+                                            </a>
+                                        </nav>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="sm:px-4 p-2.5 pt-0">
+                                <pre class="font-normal" style="white-space: pre-wrap; word-wrap: break-word;"
+                                    data-bind="text: post.content"></pre>
+                            </div>
+
+                            <!-- ko if: images.length > 0 -->
+                            <div class="relative uk-visible-toggle sm:px-4 uk-slideshow" tabindex="-1"
+                                uk-slideshow="animation: push;finite: true;min-height: 300; max-height: 450">
+
+                                <ul class="uk-slideshow-items" uk-lightbox="">
+
+                                    <!-- ko foreach: { data: post.images, as: 'image' } -->
+                                    <li class="w-full overflow-hidden sm:rounded-md" tabindex="-1">
+                                        <a
+                                            data-bind="attr: { href: '/uploads/' + image, 'data-caption': 'Picture ' + ($index() + 1) }">
+                                            <img class="w-full h-full object-cover inset-0 lazy"
+                                                data-bind="attr: { src: '/uploads/' + image }">
+                                        </a>
+                                    </li>
+                                    <!-- /ko -->
+                                </ul>
+
+                                <button type="button"
+                                    class="absolute left-2 -translate-y-1/2 bg-black/40 backdrop-blur-3xl rounded-full top-1/2 grid w-7 h-7 place-items-center shadow"
+                                    uk-slideshow-item="previous">
+                                    <ion-icon name="chevron-back" class="text-xl text-white md hydrated" role="img"
+                                        aria-label="chevron back"></ion-icon>
+                                </button>
+                                <button type="button"
+                                    class="absolute right-2 -translate-y-1/2 bg-black/40 backdrop-blur-3xl rounded-full top-1/2 grid w-7 h-7 place-items-center shadow uk-invisible"
+                                    uk-slideshow-item="next">
+                                    <ion-icon name="chevron-forward" class="text-xl text-white md hydrated" role="img"
+                                        aria-label="chevron forward"></ion-icon>
+                                </button>
+
+                            </div>
+                            <!-- /ko -->
+
+                            <div class="sm:p-4 p-2.5 flex items-center gap-4 text-xs font-semibold">
+                                <div class="flex items-center gap-3">
+                                    <button type="button" class="button__ico bg-green-100 dark:bg-slate-700"
+                                        data-bind="click: $root.AddCactus">
+                                        🌵
+                                    </button>
+                                    <spand data-bind="text: post.cactus"></span>
+                                </div>
+                                <div class="flex items-center gap-2.5">
+                                    <button type="button" class="button__ico bg-red-100 dark:bg-slate-700"
+                                        data-bind="click: $root.AddTomato">
+                                        🍅
+                                    </button>
+                                    <spand data-bind="text: post.tomato"></span>
+                                </div>
+                            </div>
+
+                            <!-- ko if: post.comments().length > 0 -->
+                            <div
+                                class="sm:p-4 p-2.5 border-t border-gray-100 font-normal space-y-3 relative dark:border-slate-700/40">
+
+                                <!-- ko foreach: { data: post.comments, as: 'comment' } -->
+                                <div class="flex items-start gap-3 relative">
+                                    <a href="#">
+                                        <img alt="" class="w-6 h-6 mt-1 rounded-full lazy"
+                                            data-bind="attr: { src: '/uploads/' + comment.user.avatar, alt: comment.user.username }">
+                                    </a>
+                                    <div class="flex-1">
+                                        <div class="inline-block">
+                                            <a href="#" class="text-black font-medium dark:text-white"
+                                                data-bind="text: comment.user.username"></a>
+                                            <span class="text-xs text-gray-500 dark:text-white/80"> · </span>
+                                            <span class="text-xs text-gray-500 dark:text-white/80"
+                                                data-bind="text: comment.createdTime"></span>
+                                        </div>
+                                        <p class="mt-0.5" data-bind="text: comment.content"></p>
+                                    </div>
+                                    <button type="button" class="button__ico bg-slate-200/70 dark:bg-slate-700 ml-auto"
+                                        data-bind="click: $root.RemoveComment.bind($data, $parent)">
+                                        <ion-icon class="text-lg md hydrated" name="close" role="img"
+                                            aria-label="remove comment"></ion-icon>
+                                    </button>
+                                </div>
+                                <!-- /ko -->
+
+                            </div>
+                            <!-- /ko -->
+
+                            <div
+                                class="sm:px-4 sm:py-3 p-2.5 border-t border-gray-100 flex items-center gap-1 dark:border-slate-700/40">
+                                <img src="./uploads/<?php echo $_SESSION['user']['avatar']; ?>" alt=""
+                                    class="w-6 h-6 rounded-full lazy">
+                                <div class="flex-1 relative overflow-hidden h-10">
+                                    <textarea placeholder="Add Comment..." rows="1"
+                                        class="w-full resize-none !bg-transparent px-4 py-2 focus:!border-transparent focus:!ring-transparent"
+                                        aria-haspopup="true" aria-expanded="false"
+                                        data-bind="value: post.txtCommentContent"></textarea>
+                                </div>
+                                <button class="text-sm rounded-full py-1.5 px-3.5 bg-secondery"
+                                    data-bind="click: $root.AddComment">
+                                    Sent
+                                </button>
+                            </div>
+                        </div>
+                        <!-- /ko -->
+                        <!-- ko if: isLoading && isScroll -->
+                        <div
+                            class="rounded-xl shadow-sm p-4 space-y-4 bg-slate-200/40 animate-pulse border1 dark:bg-dark2">
+                            <div class="flex gap-3">
+                                <div class="w-9 h-9 rounded-full bg-slate-300/20"></div>
+                                <div class="flex-1 space-y-3">
+                                    <div class="w-40 h-5 rounded-md bg-slate-300/20"></div>
+                                    <div class="w-24 h-4 rounded-md bg-slate-300/20"></div>
+                                </div>
+                                <div class="w-6 h-6 rounded-full bg-slate-300/20"></div>
+                            </div>
+                            <div class="w-full h-52 rounded-lg bg-slate-300/10 my-3"> </div>
+                            <div class="flex gap-3">
+                                <div class="w-16 h-5 rounded-md bg-slate-300/20"></div>
+                                <div class="w-14 h-5 rounded-md bg-slate-300/20"></div>
+                            </div>
+                        </div>
+                        <!-- /ko -->
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <div id="create-post" class="hidden lg:p-20 uk-modal" uk-modal="" tabindex="-1">
+        <div
+            class="uk-modal-dialog tt relative overflow-hidden mx-auto bg-white p-7 shadow-xl rounded-lg md:w-[520px] w-full dark:bg-dark2">
+            <div class="text-center py-3 border-b -m-7 mb-0 dark:border-slate-700">
+                <h2 class="text-sm font-medium"> New Post </h2>
+                <button type="button" class="button__ico absolute top-0 right-0 m-2.5 uk-modal-close">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+            <div class="space-y-5 mt-7">
+                <div>
+                    <textarea class="w-full resize-none mt-3" rows="5"
+                        data-bind="value: $root.txtCreatePostContent"></textarea>
+                </div>
+                <div>
+                    <div id="dropzone"
+                        class="dropzone w-full h-72 relative border1 rounded-lg overflow-hidden bg-[url(&#39;../images/ad_pattern.png&#39;)] bg-repeat">
+                    </div>
+                </div>
+                <div class="flex justify-between items-center">
+                    <div class="flex items-start gap-2">
+                    </div>
+                    <button type="button" class="button bg-blue-500 text-white px-8" data-bind="click: CreatePost">
+                        Create</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="edit-post" class="hidden lg:p-20 uk-modal" uk-modal="" tabindex="-1">
+        <div
+            class="uk-modal-dialog tt relative overflow-hidden mx-auto bg-white p-7 shadow-xl rounded-lg md:w-[520px] w-full dark:bg-dark2">
+            <div class="text-center py-3 border-b -m-7 mb-0 dark:border-slate-700">
+                <h2 class="text-sm font-medium"> Edit Post </h2>
+                <button type="button" class="button__ico absolute top-0 right-0 m-2.5 uk-modal-close">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+            <div class="space-y-5 mt-7">
+                <div>
+                    <textarea class="w-full mt-3" rows="5" data-bind="value: $root.txtEditPostContent"></textarea>
+                </div>
+                <div class="flex justify-between items-center">
+                    <div class="flex items-start gap-2">
+                    </div>
+                    <button type="button" class="button bg-green-500 text-white px-8" data-bind="click: UpdatePost">
+                        Update</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="display: none;" id="my-template">
+        <div id="mytmp" class="dz-preview dz-file-preview">
+            <div class="dz-image"><img data-dz-thumbnail /></div>
+            <div class="dz-details">
+                <div class="dz-size"><span data-dz-size></span></div>
+                <div class="dz-filename"><span data-dz-name></span></div>
+            </div>
+            <div class="dz-progress">
+                <span class="dz-upload" data-dz-uploadprogress></span>
+            </div>
+            <div class="dz-success-mark">
+                <svg xmlns="http://www.w3.org/2000/svg" height="54px" viewBox="0 0 54 54" width="54px" fill="#000000">
+                    <path d="M0 0h24v24H0z" fill="none" />
+                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
+                </svg>
+            </div>
+            <div class="dz-error-mark">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000">
+                    <path d="M0 0h24v24H0z" fill="none" />
+                    <circle cx="12" cy="19" r="2" />
+                    <path d="M10 3h4v12h-4z" />
+                </svg>
+            </div>
+            <div class="dz-remove" data-dz-remove>
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000">
+                    <path d="M0 0h24v24H0z" fill="none" />
+                    <path
+                        d="M14.59 8L12 10.59 9.41 8 8 9.41 10.59 12 8 14.59 9.41 16 12 13.41 14.59 16 16 14.59 13.41 12 16 9.41 14.59 8zM12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z" />
+                </svg>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/3.6.19/fetch.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.9.3/dropzone.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.5.1/knockout-latest.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script src="./js/uikit.min.js"></script>
+    <script src="./js/script.js"></script>
+    <script src="./js/index.js"></script>
 </body>
+
 </html>

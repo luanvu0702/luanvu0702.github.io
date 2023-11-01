@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" class="hydrated">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <!-- Favicon -->
+    <link href="./favicon.png" rel="icon" type="image/png">
+
+    <!-- title and description-->
+    <title>CaTo - Login</title>
+    <meta name="description" content="CaTo Diary">
+
+    <!-- css files -->
+    <link rel="stylesheet" href="./css/tailwind.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body class="bg-white dark:bg-slate-900">
+    <div class="flex flex-col h-screen justify-center items-center">
+        <div class="max-w-sm mx-auto md:px-10 p-4 w-full">
+            <div uk="" -scrollspy="target: > * > *; cls: uk-animation-scale-up; delay: 100 ;repeat: true">
+                <!-- logo -->
+                <div class="flex justify-center mb-12"
+                    uk-scrollspy="target: > *; cls: uk-animation-scale-up; delay: 100 ;repeat: true">
+                    🌵🍅
+                </div>
+                <div class="space-y-3" uk-scrollspy="target: > *; cls: uk-animation-scale-up; delay: 100 ;repeat: true">
+                    <input class="!w-full uk-scrollspy-inview " name="username" type="text" placeholder="Username"
+                        required data-bind="value: $root.username">
+                    <input class="!w-full uk-scrollspy-inview " name="password" type="password" placeholder="Password"
+                        required data-bind="value: $root.password">
+                    <button
+                        class="font-medium w-full rounded-lg bg-slate-900 py-1.5 px-4 text-white h-[38px] active:scale-[0.97] transition-all duration-150 uk-scrollspy-inview "
+                        data-bind="click: $root.login"> <span>Sign in</span> </button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/3.6.19/fetch.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.9.3/dropzone.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.5.1/knockout-latest.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script src="./js/uikit.min.js"></script>
+    <script src="./js/login.js"></script>
+</body>
+
+</html>
