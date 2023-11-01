@@ -1,4 +1,4 @@
-const host = "http://cato-diary.byethost4.com";
+const host = "//cato-diary.byethost4.com";
 function CaToLoginViewModel() {
     var self = this;
     self.username = ko.observable("");
