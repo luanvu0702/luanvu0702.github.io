@@ -1,4 +1,4 @@
-const host = "//cato-diary.byethost4.com";
+const host = "https://cato-diary.000webhostapp.com";
 function CaToLoginViewModel() {
     var self = this;
     self.username = ko.observable("");
@@ -17,7 +17,7 @@ function CaToLoginViewModel() {
             success: function (result) {
                 if (result.code == 1) {
                     localStorage.setItem("token", JSON.stringify(result.data.token));
-                    // location.href = "/index.html";
+                    location.href = "/index.html";
                 } else {
                     alert(result.message);
                 }
