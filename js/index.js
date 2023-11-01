@@ -1,5 +1,5 @@
 
-const host = "http://cato-diary.byethost4.com";
+const host = "https://cato-diary.000webhostapp.com";
 
 function PostViewModel(post) {
     var self = this;
